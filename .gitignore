@@ -46,8 +46,4 @@ Thumbs.db
 *.sig
 *.checksums.txt
 
-# Arquivos de instalação temporária
-agents/linux/eccovyx-agent
-agents/windows/eccovyx-agent.exe
-exporters/linux/node_exporter
-exporters/windows/windows_exporter.exe
+
