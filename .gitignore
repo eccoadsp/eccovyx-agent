@@ -1,11 +1,8 @@
 # Binários locais
-*.exe
 *.dll
 *.so
 *.dylib
-eccovyx-agent
-node_exporter
-windows_exporter.exe
+
 
 # Diretórios de build
 /build/
