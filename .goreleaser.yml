@@ -12,45 +12,35 @@ builds:
   - id: linux
     main: ./linux/cmd/main.go
     binary: eccovyx-agent
-    goos:
-      - linux
-    goarch:
-      - amd64
-    env:
-      - CGO_ENABLED=0
-    ldflags:
-      - -s -w
+    goos: [linux]
+    goarch: [amd64]
+    env: [CGO_ENABLED=0]
+    ldflags: [-s -w]
 
   - id: windows
     main: ./windows/cmd/main.go
     binary: eccovyx-agent.exe
-    goos:
-      - windows
-    goarch:
-      - amd64
-    env:
-      - CGO_ENABLED=0
-    ldflags:
-      - -s -w
+    goos: [windows]
+    goarch: [amd64]
+    env: [CGO_ENABLED=0]
+    ldflags: [-s -w]
 
-archives:
-  - id: linux
-    builds: [linux]
+artifacts:
+  - name_template: "{{ .ProjectName }}_Linux_{{ .Arch }}"
+    type: archive
     format: zip
-    name_template: "{{ .ProjectName }}_Linux_{{ .Arch }}"
+    ids: [linux]
     files:
       - linux/install/install.sh
       - linux/exporters/node_exporter
-    wrap_in_directory: false
 
-  - id: windows
-    builds: [windows]
+  - name_template: "{{ .ProjectName }}_Windows_{{ .Arch }}"
+    type: archive
     format: zip
-    name_template: "{{ .ProjectName }}_Windows_{{ .Arch }}"
+    ids: [windows]
     files:
       - windows/install/install.ps1
       - windows/exporters/windows_exporter.exe
-    wrap_in_directory: false
 
 checksum:
   name_template: "checksums.txt"
