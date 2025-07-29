@@ -28,5 +28,5 @@ jobs:
         with:
           version: latest
           args: release --clean
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PERSONAL_TOKEN }}
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
+        
