@@ -11,7 +11,7 @@ jobs:
     name: GoReleaser Build
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # permite criar release
 
     steps:
       - name: Checkout
@@ -27,4 +27,5 @@ jobs:
         with:
           version: latest
           args: release --clean
-#ultima versão
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
