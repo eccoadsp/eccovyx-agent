@@ -1,0 +1,53 @@
+# Binários locais
+*.exe
+*.dll
+*.so
+*.dylib
+eccovyx-agent
+node_exporter
+windows_exporter.exe
+
+# Diretórios de build
+/build/
+/dist/
+/out/
+/release/
+
+# Logs
+*.log
+/var/log/*.log
+
+# Dependências do sistema
+vendor/
+
+# Arquivos do Go
+*.test
+*.cover
+*.out
+
+# Arquivos de IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos do instalador
+*.msi
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+
+# GitHub Actions / GoReleaser output
+*.sig
+*.checksums.txt
+
+# Arquivos de instalação temporária
+agents/linux/eccovyx-agent
+agents/windows/eccovyx-agent.exe
+exporters/linux/node_exporter
+exporters/windows/windows_exporter.exe
