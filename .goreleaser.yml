@@ -25,22 +25,25 @@ builds:
     env: [CGO_ENABLED=0]
     ldflags: [-s -w]
 
-artifacts:
-  - name_template: "{{ .ProjectName }}_Linux_{{ .Arch }}"
-    type: archive
+archives:
+  - id: linux
+    builds: [linux]
     format: zip
-    ids: [linux]
+    name_template: "{{ .ProjectName }}_Linux_{{ .Arch }}"
     files:
       - linux/install/install.sh
       - linux/exporters/node_exporter
+    wrap_in_directory: false
 
-  - name_template: "{{ .ProjectName }}_Windows_{{ .Arch }}"
-    type: archive
+  - id: windows
+    builds: [windows]
     format: zip
-    ids: [windows]
+    name_template: "{{ .ProjectName }}_Windows_{{ .Arch }}"
     files:
       - windows/install/install.ps1
       - windows/exporters/windows_exporter.exe
+    wrap_in_directory: false
+
 
 checksum:
   name_template: "checksums.txt"
