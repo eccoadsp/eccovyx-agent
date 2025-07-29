@@ -10,9 +10,8 @@ jobs:
   release:
     name: GoReleaser Build
     runs-on: ubuntu-latest
-
     permissions:
-      contents: write # Necessário para criar releases
+      contents: write
 
     steps:
       - name: Checkout
@@ -23,9 +22,8 @@ jobs:
         with:
           go-version: '1.22'
 
-      - name: Install GoReleaser
+      - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v5
         with:
           version: latest
           args: release --clean
-        
