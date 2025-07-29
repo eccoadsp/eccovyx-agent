@@ -3,7 +3,7 @@ project_name: eccovyx-agent
 
 release:
   github:
-    owner: eccovalue
+    owner: eccoadsp
     name: eccovyx-agent
   draft: false
   prerelease: false
