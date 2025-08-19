@@ -44,3 +44,5 @@ Thumbs.db
 *.checksums.txt
 
 
+agent-creds.json
+agent-creds-template.json
